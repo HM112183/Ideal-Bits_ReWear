@@ -1,37 +1,34 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginPage from './pages/LoginPage'; // Assuming you have these
-import RegistrationPage from './pages/RegistrationPage'; // Assuming you have these
+import LoginPage from './pages/LoginPage'; // Correctly points to the new file
+import RegistrationPage from './pages/RegistrationPage'; // Correctly points to the new file
 import LandingPage from './pages/LandingPage';
 import UserDashboard from './pages/UserDashboard';
 import ItemDetailPage from './pages/ItemDetailPage';
 import AddNewItemPage from './pages/AddNewItemPage';
-import AdminDashboard from './pages/AdminDashboard'; // For admin role
-import Header from './components/Header'; // A common header component
-import Footer from './components/Footer'; // A common footer component (optional)
+import AdminDashboard from './pages/AdminDashboard';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
-      <Header /> {/* Your common header */}
-      <main className="container"> {/* Basic container for content */}
+      <Header />
+      <main className="container">
         <Routes>
-          {/* Existing routes */}
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/register" element={<RegistrationPage />} /> {/* Route for signup */}
 
-          {/* New routes */}
           <Route path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<UserDashboard />} />
           <Route path="/item/:id" element={<ItemDetailPage />} />
           <Route path="/add-item" element={<AddNewItemPage />} />
-          <Route path="/admin" element={<AdminDashboard />} /> {/* Admin route */}
-          {/* A route for Browse all items, potentially linked from "Browse Items" */}
-          <Route path="/browse-items" element={<LandingPage />} /> {/* For now, points to landing */}
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/browse-items" element={<LandingPage />} />
         </Routes>
       </main>
-      <Footer /> {/* Your common footer */}
+      <Footer />
     </Router>
   );
 }
