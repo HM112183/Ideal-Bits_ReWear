@@ -1,0 +1,84 @@
+/* src/styles/addItem.module.css */
+.addItemPage {
+  padding: 30px 0;
+}
+
+.addItemPage h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.addForm {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+  }
+  .fullWidth {
+    grid-column: span 2; /* Make specific fields span full width */
+  }
+}
+
+.imageUploadPreview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.imagePreview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.formActions {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.submitButton {
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 25px;
+}
+
+.loadingMessage, .errorMessage, .successMessage {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.loadingMessage {
+  background-color: #e0f7fa;
+  color: #00796b;
+}
+
+.errorMessage {
+  background-color: #ffe0e0;
+  color: #dc3545;
+}
+
+.successMessage {
+  background-color: #e6ffe6;
+  color: #28a745;
+}
